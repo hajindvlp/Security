@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      .input {
+        margin: 10px;
+        font-size: 20px;
+      }
+
+      input {
+        height: 25px;
+        /* font-size: 20px; */
+        border-radius: 2px;
+      }
+      
+      #error {
+        color: red;
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      function formCheck() {
+        let inputs = [...document.getElementsByTagName("input")];
+        let flag = false;
+        inputs.forEach(input => {
+          if(input.value == "") {
+            input.parentElement.style.color = "red";
+            document.getElementById("error").innerText = `입력되지 않은 칸이 있습니다.`
+            flag = true;
+          } else {
+            input.parentElement.style.color = "black";
+          }
+        });
+        if(!flag) {
+            document.getElementById("error").innerText = "";
+          document.getElementById("form").submit();
+        }
+        console.log(inputs);
+      }
+    </script>
+  </head>
+  <body>
+    <form action="olympiad.php" id="form" method="POST" enctype="multipart/form-data">
+      <div class="input">이름 : <input type="text" name="name" id=""> </div>
+      <div class="input">지역 : <input type="text" name="loc" id=""> </div>
+      <div class="input">학교 : <input type="text" name="school" id=""> </div>
+      <div class="input">학년 :  
+        <select name="grade">
+          <option name="" value="1">1학년<br>
+          <option name="" value="2">2학년<br>
+          <option name="" value="3">3학년<br>
+        </select>
+      </div>
+      <div class="input">성별 : <input type="radio" name="gender" value="남자" checked="checked"> 남자 <input type="radio" name="gender" value="여자"> 여자 </div>
+      <div class="input">생년월일 : <input type="date" name="birth"> </div>
+      <div class="input">응시분야 :  
+        <select name="subject">
+          <option name="" value="프로그래밍">프로그래밍<br>
+          <option name="" value="컴퓨터그래픽">컴퓨터그래픽<br>
+          <option name="" value="해킹방어">해킹방어<br>        
+            <option name="" value="창업아이템">창업아이템<br>        
+        </select>
+      </div>
+      <div class="input">이메일 : <input type="text" name="email"> </div>
+      <div class="input">휴대폰번호 : <input type="text" name="phone"> </div>
+      <div class="input">보호자 휴대폰번호 : <input type="text" name="parentPhone"> </div>
+      <div class="input">집주소 : <input type="text" name="address" id=""> </div>
+      <div class="input">사진파일 업로드 : <input type="file" name="image" id="image"> </div>
+      <input type="button" name="" onclick="formCheck()" value="제출">
+    </form> 
+    <div id="error"></div>
+  </body>
+</html>

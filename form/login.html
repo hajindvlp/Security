@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>로그인 페이지 만들기</title>
+    <meta charset="utf-8">
+    <script language="javascript"> 
+      const login_check = () => {
+        if(document.getElementById("id").value == "") {
+          alert("아이디를 입력해주세요.");
+          return;
+        }
+        if(document.getElementById("pw").value == "") {
+          alert("비밀번호를 입력해주세요.");
+          return;
+        } 
+        if(document.getElementById("id").value != "" && document.getElementById("pw").value != "") {
+          document.getElementById("login").submit();
+        }
+      }
+      const login_focus = () => {
+        document.getElementById("id").focus();
+      }
+      
+    </script>
+  </head>
+  <body onload="login_focus()">
+    <form action="login.php" method="post" id="login">
+      <h1>로그인 페이지 만들기</h1>
+      ID : 
+      <input name="id" id="id" type="text"><br>
+      PW : 
+      <input name="password" id="pw" type="password"><br>
+      <input type="button" onclick="login_check()" value="제출하기">      
+    </form>
+  </body>
+</html>
+
+
+<!--  컨트롤 제트 자제좀...몰랐음 -->
+<!-- 아 너무 좋다 행복해 정보보호시간이 행복할 줄이야 -->

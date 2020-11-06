@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>쇼핑물의 메시지 페이지 만들기</title>
+    <script language="javascript">
+      function check() {
+        let textarea = document.getElementById("messageBox");
+        if(textarea.value == "") {
+          alert("메세지를 입력하지 않았습니다!");
+          textarea.focus();
+        } else {
+          document.getElementById('form').submit();
+        }
+      }
+      function focus() {
+        let textarea = document.getElementById("messageBox");
+        textarea.focus();
+      }
+    </script>
+  </head>
+  <body onload="focus();">
+    <h1>쇼핑물의 메시지 페이지 만들기</h1>
+    <p>배송 메시지를 입력하세요</p>
+    
+    <form action="textarea.php" method="post" id="form">
+      <textarea name="message" cols="50" rows="10" id="messageBox"></textarea>
+      <p> <input type="button" onclick="check();" value="제출"> </p>
+    </form>
+  </body>
+</html>   

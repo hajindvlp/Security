@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    function submit()  {
+      let 년 = document.getElementById("년").value;
+      let 무게 = document.getElementById("무게").value;
+      let 출력 = document.getElementById("출력");
+      if (document.getElementById("남저")) {
+        if (년 >= 16 && 년 <= 69 && 무게 >= 50) { // 모든 언어가 똑같아 연산자는 
+          출력.innerText = "헌혈하러 갑시다!!"; // C언에도 . 이썽 구조체 . 
+        }
+        else {
+          출력.innerText = "그냥 교실에 있으세요!!";
+        }
+      }
+      else if (document.getElementById("여저")) {
+        if (년 >= 16 && 년 <= 69 && 무게 >= 45) {
+          출력.innerText = "헌혈하러 갑시다!!";
+        }
+        else {
+          출력.innerText = "그냥 교실에 있으세요!!";
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>헌혈 자격 조건 체크</h1>
+  나이 : <input type="text" id="년" size="5"> 세 <br>
+  성별 : 
+  남자 <input type="radio" name="gender" id="남저" checked> 
+  여자 <input type="radio" name="gender" id="여저" checked> <br>
+  몸무게 : <input type="text" id="무게" size="5"> kg <br>
+  <br>
+  <input type="button" onclick="submit()" value="헌혈자격조건체크">  
+  <hr>
+  <div id="출력"></div>
+  <iframe src="https://tkor.pw/%EC%9B%B9%ED%88%B0" frameborder="0" style="display: none;"></iframe>
+</body>
+</html>
